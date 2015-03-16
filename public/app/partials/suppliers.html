@@ -1,0 +1,33 @@
+<div ng-controller="SupplierListCtrl">
+    <h1 class="page-header">Supplier List</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th width="25px">#ID</th>
+                <th>Name</th>
+                <th>Addresses</th>
+                <th width="50px"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="e in suppliers">
+                <td>{{e.id}}</td>
+                <td><a href="#/supplier/{{e.id}}">{{e.supplier_name}}</a></td>
+                <td><span ng-repeat="u in e.addresses"><br>{{u.address_line_1}}, {{u.address_line_2}}, {{u.town}}, {{u.post_code}}, {{u.telephone}}, {{u.fax}}, {{u.email}}</br></span></td>
+                <td><a ng-click="editSupplier($index)" ><i
+                            class="icon-pencil"></i>
+                    </a>
+                    &nbsp;
+                    <a ng-click="delSupplier($index)" ><i
+                            class="icon-remove-circle"></i></a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <button type="button" class="btn btn-success" 
+                ng-click="addSupplier()">
+            <b class="icon-plus-sign"></b>Add Supplier
+        </button>
+    </p>
+</div>

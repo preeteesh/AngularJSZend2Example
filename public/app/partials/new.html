@@ -1,0 +1,19 @@
+<div ng-controller="NewSupplierCtrl">
+    <form  class="form-horizontal">
+        <h1 class="page-header">New Supplier</h1>
+        <fieldset>    
+            <div class="control-group">
+                <label class="control-label" for="title">Name</label>
+                <div class="controls">
+                    <input id="name" type="text" class="input-block-level"
+                           required="true" ng-model="supplier.supplier_name"></input>
+                </div>
+            </div>
+            <div ng-include src="'partials/address.html'"></div>
+            
+        </fieldset> 
+        <div class="form-actions">			
+            <button class="btn btn-primary" ng-click="saveSupplier()">Add Supplier</button>
+        </div>
+    </form>
+</div>

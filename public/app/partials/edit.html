@@ -1,0 +1,20 @@
+<div ng-controller="EditSupplierCtrl">
+    <form class="form-horizontal">
+        <h1 class="page-header">Edit Supplier({{supplier.id}})</h1>
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label" for="name">Name</label>
+                <div class="controls">
+                    <input id="name" type="text" class="input-block-level"
+                           required="true" ng-model="supplier.supplier_name"></input>
+                </div>
+            </div>
+         <div ng-include src="'partials/address.html'"></div>       
+        </fieldset>
+        <div class="form-actions">			
+            <button ng-click="updateSupplier()" class="btn btn-primary">Update Supplier</button>
+        </div>
+    </form>
+	<br/>
+</div>
+
